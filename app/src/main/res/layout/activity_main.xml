@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:gravity="center_vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="Hi, username!"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/ic_launcher"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRound"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.SearchView
+        android:theme="@style/searchViewStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:iconifiedByDefault="false"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="18dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="Categorias"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:clickable="true"
+            android:textColor="@color/gray"
+            android:layout_weight="1"
+            android:text="Ver Mais+"/>
+
+    </LinearLayout>
+
+    <HorizontalScrollView
+        android:scrollbars="none"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.walker.modulo2aula7androidfundamentos.CategoryButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTitle="Horror"
+                app:emojiIcon="😱"/>
+
+            <com.walker.modulo2aula7androidfundamentos.CategoryButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTitle="Romance"
+                app:emojiIcon="❤️"/>
+
+            <com.walker.modulo2aula7androidfundamentos.CategoryButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTitle="Suspense"
+                app:emojiIcon="💀️"/>
+
+            <com.walker.modulo2aula7androidfundamentos.CategoryButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTitle="Ação"
+                app:emojiIcon="🤯"/>
+
+            <com.walker.modulo2aula7androidfundamentos.CategoryButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:buttonTitle="Comédia"
+                app:emojiIcon="🤣"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/movie_item">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginBottom="18dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@color/white"
+            android:text="Popular"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:clickable="true"
+            android:textColor="@color/gray"
+            android:layout_weight="1"
+            android:text="Ver Mais+"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/movie_item">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

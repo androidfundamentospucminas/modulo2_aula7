@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CategoryButton">
+        <attr name="emojiIcon" format="string"/>
+        <attr name="buttonTitle" format="string"/>
+    </declare-styleable>
+</resources>
