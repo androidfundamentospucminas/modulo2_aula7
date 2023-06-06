@@ -4,4 +4,9 @@
         <attr name="emojiIcon" format="string"/>
         <attr name="buttonTitle" format="string"/>
     </declare-styleable>
+    <declare-styleable name="CardTemplate">
+        <attr name="expireDate" format="string" />
+        <attr name="cardNumber" format="string" />
+        <attr name="bankValue" format="string" />
+    </declare-styleable>
 </resources>

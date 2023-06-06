@@ -4,153 +4,110 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginHorizontal="24dp"
+    android:paddingTop="24dp"
     android:orientation="vertical"
-    android:padding="20dp"
-    android:background="@color/background"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BankApp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.helper.widget.Carousel
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+    </androidx.constraintlayout.helper.widget.Carousel>
+
+    <com.walker.modulo2aula7androidfundamentos.CardTemplate
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:layout_marginTop="8dp"
+        app:expireDate="00/00"
+        app:bankValue="$ 1.000.000,00"
+        app:cardNumber="0000 **** **** ****"/>
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:gravity="center_vertical"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal">
 
-        <TextView
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_marginHorizontal="2dp"
+            android:backgroundTint="@color/payButtonBackground"
+            android:text="Pagar Fatura"
+            android:elevation="2dp"
             android:textColor="@color/white"
-            android:text="Hi, username!"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            />
+            app:icon="@drawable/pay_icon" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@mipmap/ic_launcher"
-            app:shapeAppearanceOverlay="@style/roundedImageViewRound"/>
-
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/blockButtonBackground"
+            android:text="Bloquear"
+            android:elevation="10dp"
+            android:textColor="@color/white"
+            app:icon="@drawable/block_icon"
+            app:layout_constraintBottom_toBottomOf="@+id/materialButton4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/materialButton4"
+            app:layout_constraintTop_toTopOf="@+id/materialButton4" />
     </LinearLayout>
-
-    <androidx.appcompat.widget.SearchView
-        android:theme="@style/searchViewStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        app:iconifiedByDefault="false"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="18dp"
+        android:layout_marginTop="24dp"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/white"
-            android:text="Categorias"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:clickable="true"
-            android:textColor="@color/gray"
-            android:layout_weight="1"
-            android:text="Ver Mais+"/>
-
-    </LinearLayout>
-
-    <HorizontalScrollView
-        android:scrollbars="none"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <LinearLayout
+            android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <com.walker.modulo2aula7androidfundamentos.CategoryButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTitle="Horror"
-                app:emojiIcon="😱"/>
-
-            <com.walker.modulo2aula7androidfundamentos.CategoryButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTitle="Romance"
-                app:emojiIcon="❤️"/>
-
-            <com.walker.modulo2aula7androidfundamentos.CategoryButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTitle="Suspense"
-                app:emojiIcon="💀️"/>
-
-            <com.walker.modulo2aula7androidfundamentos.CategoryButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTitle="Ação"
-                app:emojiIcon="🤯"/>
-
-            <com.walker.modulo2aula7androidfundamentos.CategoryButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTitle="Comédia"
-                app:emojiIcon="🤣"/>
-
-        </LinearLayout>
-
-    </HorizontalScrollView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/movie_item">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="18dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="23sp"
             android:layout_weight="1"
-            android:textColor="@color/white"
-            android:text="Popular"/>
+            android:text="Transações Recentes"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialButton4" />
 
-        <TextView
-            android:layout_width="match_parent"
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="end"
-            android:clickable="true"
-            android:textColor="@color/gray"
-            android:layout_weight="1"
-            android:text="Ver Mais+"/>
+            android:background="@android:color/transparent"
+            android:src="@drawable/menu_icon" />
 
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/movie_item">
-
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp"
+        tools:listitem="@layout/transaction_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
 </LinearLayout>

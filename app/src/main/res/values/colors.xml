@@ -6,4 +6,10 @@
     <color name="gray">#B2B2B2</color>
     <color name="buttonBackgroundPressed">#08194A</color>
     <color name="buttonBackground">#213160</color>
+    <color name="cardBackground">#262626</color>
+    <color name="cardBackgroundGray">#BEBEBE</color>
+    <color name="payButtonBackground">#FFC107</color>
+    <color name="payButtonBackgroundPressed">#AC8308</color>
+    <color name="blockButtonBackground">#8BC34A</color>
+    <color name="blockButtonBackgroundPressed">#416814</color>
 </resources>
