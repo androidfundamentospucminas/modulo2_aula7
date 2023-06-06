@@ -39,118 +39,130 @@
         android:layout_marginTop="28dp"
         app:iconifiedByDefault="false"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="18dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/white"
-            android:text="Categorias"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:clickable="true"
-            android:textColor="@color/gray"
-            android:layout_weight="1"
-            android:text="Ver Mais+"/>
-
-    </LinearLayout>
-
-    <HorizontalScrollView
-        android:scrollbars="none"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-            <com.walker.modulo2aula7androidfundamentos.CategoryButton
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:buttonTitle="Horror"
-                app:emojiIcon="😱"/>
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="18dp"
+                android:orientation="horizontal">
 
-            <com.walker.modulo2aula7androidfundamentos.CategoryButton
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:text="Categorias"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:clickable="true"
+                    android:textColor="@color/gray"
+                    android:layout_weight="1"
+                    android:text="Ver Mais+"/>
+
+            </LinearLayout>
+
+            <HorizontalScrollView
+                android:scrollbars="none"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.walker.modulo2aula7androidfundamentos.CategoryButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTitle="Horror"
+                        app:emojiIcon="😱"/>
+
+                    <com.walker.modulo2aula7androidfundamentos.CategoryButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTitle="Romance"
+                        app:emojiIcon="❤️"/>
+
+                    <com.walker.modulo2aula7androidfundamentos.CategoryButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTitle="Suspense"
+                        app:emojiIcon="💀️"/>
+
+                    <com.walker.modulo2aula7androidfundamentos.CategoryButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTitle="Ação"
+                        app:emojiIcon="🤯"/>
+
+                    <com.walker.modulo2aula7androidfundamentos.CategoryButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:buttonTitle="Comédia"
+                        app:emojiIcon="🤣"/>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:buttonTitle="Romance"
-                app:emojiIcon="❤️"/>
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/movie_item">
 
-            <com.walker.modulo2aula7androidfundamentos.CategoryButton
-                android:layout_width="wrap_content"
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:buttonTitle="Suspense"
-                app:emojiIcon="💀️"/>
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="18dp"
+                android:orientation="horizontal">
 
-            <com.walker.modulo2aula7androidfundamentos.CategoryButton
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:text="Popular"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:clickable="true"
+                    android:textColor="@color/gray"
+                    android:layout_weight="1"
+                    android:text="Ver Mais+"/>
+
+            </LinearLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:buttonTitle="Ação"
-                app:emojiIcon="🤯"/>
+                android:layout_marginTop="1dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/movie_item">
 
-            <com.walker.modulo2aula7androidfundamentos.CategoryButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:buttonTitle="Comédia"
-                app:emojiIcon="🤣"/>
-
+            </androidx.recyclerview.widget.RecyclerView>
         </LinearLayout>
 
-    </HorizontalScrollView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/movie_item">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginBottom="18dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/white"
-            android:text="Popular"/>
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="end"
-            android:clickable="true"
-            android:textColor="@color/gray"
-            android:layout_weight="1"
-            android:text="Ver Mais+"/>
-
-    </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/movie_item">
-
-    </androidx.recyclerview.widget.RecyclerView>
+    </ScrollView>
 
 </LinearLayout>
